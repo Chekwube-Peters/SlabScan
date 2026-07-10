@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/value-card.js": {
+      "maxDuration": 300
+    }
+  }
+}
