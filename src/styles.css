@@ -268,6 +268,59 @@ body {
   color: var(--text-dim);
 }
 
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes value-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.result-view .valuation-card,
+.result-view .taste-card {
+  animation: card-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.result-view .taste-card {
+  animation-delay: 0.1s;
+}
+
+.result-view .price {
+  animation: value-pop 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.18s;
+}
+
+.result-view .taste-label {
+  animation: value-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.35s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-view .valuation-card,
+  .result-view .taste-card,
+  .result-view .price,
+  .result-view .taste-label {
+    animation: none;
+  }
+}
+
 .attribution a {
   color: var(--accent);
   text-decoration: none;
